@@ -160,7 +160,7 @@ function refreshCommands(options, guild) {
       console.log(e);
     });
 
-    request.write(JSON.stringify(options.commands.filter((command) => guild ? (command.guild == guild || command.guild.includes(guild)) : !command.guild)));
+    request.write(JSON.stringify(options.commands.filter((command) => guild ? (command.guild == guild || command.guild?.includes(guild)) : !command.guild)));
 
     request.end();
   });
