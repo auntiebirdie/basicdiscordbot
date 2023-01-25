@@ -160,7 +160,9 @@ function refreshCommands(options, guild) {
       console.log(e);
     });
 
-    request.write(JSON.stringify(options.commands.filter((command) => guild ? (command.guild == guild || command.guild?.includes(guild)) : !command.guild)));
+    // WORKAROUND: if you add commands to a guild, then want to remove them, you can temporarily add an 'empty' command that only has the guild ID and run the refresh command
+    // to update that guild(s) with an empty array of commands, thus clearing it out.
+    request.write(JSON.stringify(options.commands.filter((command) => guild ? command.name && (command.guild == guild || command.guild?.includes(guild)) : !command.guild)));
 
     request.end();
   });
