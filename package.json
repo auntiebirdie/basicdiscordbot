@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "author": "Auntie Birdie <seppukawaii@gmail.com>",
   "dependencies": {
-    "discord.js": "^14.7.1"
+    "discord.js": "^14.8.0"
   },
   "description": "A basic Discord bot to handle the repetitive setup of new bots.",
   "main": "index.js",
