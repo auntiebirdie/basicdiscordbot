@@ -79,6 +79,10 @@ module.exports = (options) => {
         interaction.commandName = tmp.shift();
         interaction.customId = tmp.join('_');
       }
+      // If the interaction is triggered by a context menu
+      else if (interaction.isContextMenu && interaction.isContextMenu()) {
+        interaction.commandName = interaction.commandName.toLowerCase().replace(/\s/g, '');
+      }
 
       try {
         require(`${process.cwd()}/interactions/${interaction.commandName}.js`)(interaction);
