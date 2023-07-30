@@ -80,7 +80,7 @@ module.exports = (options) => {
         interaction.customId = tmp.join('_');
       }
       // If the interaction is triggered by a context menu
-      else if (interaction.isContextMenu && interaction.isContextMenu()) {
+      else if (interaction.isContextMenuCommand && interaction.isContextMenuCommand()) {
         interaction.commandName = interaction.commandName.toLowerCase().replace(/\s/g, '');
       }
 
