@@ -74,9 +74,8 @@ module.exports.connect = (options) => {
       client.on('interactionCreate', async (interaction) => {
         // If the interaction is a button press or modal submit
         if (interaction.type == InteractionType.MessageComponent || interaction.type == InteractionType.ModalSubmit) {
-          let tmp = interaction.customId.split('-');
+          let tmp = interaction.customId.split('_')
 
-          tmp = tmp[0].split('_');
           interaction.commandName = tmp.shift();
           interaction.customId = tmp.join('_');
         }

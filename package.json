@@ -1,6 +1,6 @@
 {
   "name": "basicdiscordbot",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Auntie Birdie <seppukawaii@gmail.com>",
   "dependencies": {
     "discord.js": "^14.14.1"
@@ -8,9 +8,6 @@
   "description": "A basic Discord bot to handle the repetitive setup of new bots.",
   "main": "index.js",
   "devDependencies": {},
-  "scripts": {
-	  "refreshCommands" : "node commands.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/auntiebirdie/basicbot.git"
